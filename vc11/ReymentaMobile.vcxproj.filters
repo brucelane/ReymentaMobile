@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{714CF521-E210-4515-BE76-90D39B128355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Midi">
+      <UniqueIdentifier>{4113149D-2689-4368-9D93-ED8E703F3F05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Midi\include">
+      <UniqueIdentifier>{138314B6-25E3-4C3D-8D72-3D2E0E53B4AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Midi\src">
+      <UniqueIdentifier>{93964C2E-FA7F-436C-988E-896E7AABD203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\ciUI">
+      <UniqueIdentifier>{1AABCCDC-0B84-4CAC-A57D-6F0C4F610B23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\ciUI\src">
+      <UniqueIdentifier>{3B16929E-BACB-4567-99FE-32058018E935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OSC">
+      <UniqueIdentifier>{2550718E-D39F-4124-8FC4-EA9D5A0BFA36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OSC\src">
+      <UniqueIdentifier>{71126751-E2AF-42A3-A1EC-DCE5E03C219A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OSC\src\ip">
+      <UniqueIdentifier>{DA4171BE-D723-4E4F-833B-3FEA49176C07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OSC\src\osc">
+      <UniqueIdentifier>{7D3840DC-8D41-454F-9A4F-F6D8BDB64104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OSC\src\ip\win32">
+      <UniqueIdentifier>{5981EC85-C3FC-46EE-A967-FDD1724BA8F7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ReymentaMobileApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\src\ReymentaMobileApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\blocks\Midi\include\MidiConstants.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiExceptions.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiHeaders.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiHub.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiIn.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiMessage.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\MidiOut.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\RtError.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Midi\include\RtMidi.h">
+      <Filter>Blocks\Midi\include</Filter>
+    </ClInclude>
+    <ClCompile Include="..\blocks\Midi\src\MidiHub.cpp">
+      <Filter>Blocks\Midi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Midi\src\MidiIn.cpp">
+      <Filter>Blocks\Midi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Midi\src\MidiMessage.cpp">
+      <Filter>Blocks\Midi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Midi\src\MidiOut.cpp">
+      <Filter>Blocks\Midi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Midi\src\RtMidi.cpp">
+      <Filter>Blocks\Midi\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\cinder_master\blocks\ciUI\src\ciUI.h">
+      <Filter>Blocks\ciUI\src</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\OscBundle.cpp">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\OscListener.cpp">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\OscMessage.cpp">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\OscSender.cpp">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\ip\IpEndpointName.cpp">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscOutboundPacketStream.cpp">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscPrintReceivedElements.cpp">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscReceivedElements.cpp">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscTypes.cpp">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\OscArg.h">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\OscBundle.h">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\OscListener.h">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\OscMessage.h">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\OscSender.h">
+      <Filter>Blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\ip\IpEndpointName.h">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\ip\NetworkingUtils.h">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\ip\PacketListener.h">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\ip\TimerListener.h">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\ip\UdpSocket.h">
+      <Filter>Blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\MessageMappingOscPacketListener.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscException.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscHostEndianness.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscOutboundPacketStream.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscPacketListener.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscPrintReceivedElements.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscReceivedElements.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscTypes.h">
+      <Filter>Blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\ip\win32\NetworkingUtils.cpp">
+      <Filter>Blocks\OSC\src\ip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cinder_master\blocks\OSC\src\ip\win32\UdpSocket.cpp">
+      <Filter>Blocks\OSC\src\ip\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ReymentaMobileApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
