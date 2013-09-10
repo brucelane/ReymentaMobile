@@ -5,7 +5,7 @@ Reymenta tablet controller for Windows 8
 
 Touch enabled
 
-Forwards nanoKontrol midi message to Reymenta visuals software via OSC.
+Forwards nanoKontrol midi messages to Reymenta visuals software via OSC.
 
 Built with Cinder (http://libcinder.org/)
 

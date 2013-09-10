@@ -50,7 +50,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;$(CINDER_085)\include;$(CINDER_085)\boost;$(CINDER_085)\blocks\OSC\src;$(CINDER_085)\blocks\ciUI\src;..\blocks\Midi\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;$(CINDER_085)\include;$(CINDER_085)\boost;$(CINDER_085)\blocks\OSC\src;$(CINDER_085)\blocks\Cinder-AudioInputWin\src;$(CINDER_085)\blocks\ciUI\src;..\blocks\Midi\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,8 +64,8 @@
       <AdditionalIncludeDirectories>"..\..\..\cinder_master\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;cinder_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\..\cinder_master\lib";"..\..\..\cinder_master\lib\msw"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;cinder_d.lib;AudioInputWin_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"$(CINDER_085)\lib";"$(CINDER_085)\lib\msw";$(CINDER_085)\blocks\Cinder-AudioInputWin\lib</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -76,7 +76,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;$(CINDER_085)\include;$(CINDER_085)\boost;$(CINDER_085)\blocks\OSC\src;$(CINDER_085)\blocks\ciUI\src;..\blocks\Midi\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;$(CINDER_085)\include;$(CINDER_085)\boost;$(CINDER_085)\blocks\OSC\src;$(CINDER_085)\blocks\Cinder-AudioInputWin\src;$(CINDER_085)\blocks\ciUI\src;..\blocks\Midi\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NOMINMAX;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -88,11 +88,11 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>"..\..\..\cinder_master\include";..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>"$(CINDER_085)\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\..\cinder_master\lib";"..\..\..\cinder_master\lib\msw"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;cinder.lib;AudioInputWin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"$(CINDER_085)\lib";"$(CINDER_085)\lib\msw"$(CINDER_085)\blocks\Cinder-AudioInputWin\lib</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -107,6 +107,7 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\cinder_master\blocks\Cinder-AudioInputWin\src\AudioInput.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\blocks\Midi\include\MidiConstants.h" />
     <ClInclude Include="..\blocks\Midi\include\MidiExceptions.h" />
@@ -136,6 +137,7 @@
     <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscPrintReceivedElements.h" />
     <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscReceivedElements.h" />
     <ClInclude Include="..\..\..\cinder_master\blocks\OSC\src\osc\OscTypes.h" />
+    <ClInclude Include="..\..\..\src\AudioInput.h" />
     <ClInclude Include="..\include\ReymentaMobileApp.h" />
   </ItemGroup>
   <ItemGroup>

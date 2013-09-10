@@ -36,6 +36,35 @@ void ReymentaMobileApp::setup()
 	{
 		console() << "No MIDI Ports found!!!!" << std::endl;
 	}
+
+	// AUDIO
+	// Initialize array
+	mData = new float[1024];
+	vector<float> mbuffer; 
+    for(int i = 0; i < 1024; i++)
+    {
+        mData[i] = 0;
+        mbuffer.push_back(0);        
+    }
+	// Create audio input
+	mInput = AudioInput::create();
+
+	// Bail if no devices present
+	if ( mInput->getDeviceCount() <= 0 ) {
+		return;
+	}
+
+	// Start receiving audio
+	mInput->addCallback( &ReymentaMobileApp::onData, this );
+	mInput->start();
+
+	// List devices
+	DeviceList devices = mInput->getDeviceList();
+	for ( DeviceList::const_iterator deviceIt = devices.begin(); deviceIt != devices.end(); ++deviceIt ) {
+		console() << deviceIt->second << std::endl;
+	}
+
+	//GUI
 	backgroundColor.r = 0.5; 
 	backgroundColor.g = 0.5; 
 	backgroundColor.b = 0.5;  
@@ -106,19 +135,33 @@ void ReymentaMobileApp::setup()
 	gui->addWidgetRight(port); 
 	// cnx btn
 	gui->addWidgetRight( new ciUILabelButton(80, false, "connect", CI_UI_FONT_SMALL, 40.0f) );
+	// audio
+    gui->addWidgetSouthOf(new ciUIWaveform(240, 30, mData, 1024, -1.0, 1.0, "waveform"), "ip");  
+    /*gui->addWidgetDown(new ciUISpectrum(240, 30, mData, 1024, -1.0, 1.0, "SPECTRUM"));  */
+	gui->addWidgetSouthOf(new ciUILabel("fps", CI_UI_FONT_SMALL), "waveform");        
+
+    mvg = (ciUIMovingGraph *) gui->addWidgetSouthOf(new ciUIMovingGraph(240, 30, mbuffer, 1024, 0, 120, "fpsmvg"), "fps");    
+
 	// status
 	status = new ciUILabel("status", CI_UI_FONT_SMALL);
-	gui->addWidgetSouthOf( status, "ip" );    
+	gui->addWidgetSouthOf( status, "fpsmvg" );    
 
 	gui->registerUIEvents(this, &ReymentaMobileApp::guiEvent);
+		
+
+}
+// Called when buffer is full
+void ReymentaMobileApp::onData( float *data, int32_t size )
+{
+	mData = data;
 }
 
-
-void ReymentaMobileApp::draw(){
+void ReymentaMobileApp::draw()
+{
 	gl::clear(Color(0,0,0), true);
-	//gl::color(Color(1, 1, 1));
 	//gl::drawSolidRect(Rectf(Vec2f(0, 0), Vec2f(sliderValue * getWindowWidth(), 5)));
 	gui->draw();
+
 }
 
 void ReymentaMobileApp::keyDown( KeyEvent event )
@@ -275,11 +318,34 @@ void ReymentaMobileApp::update()
 
 	}
 	gui->update(); 
+	mvg->addPoint(getAverageFps());
+	// We have audio data
+	if ( mData != 0 ) 
+	{
+		float maxVolume = 0.0f;
+		// Get size of data
+		int32_t mDataSize = mInput->getDataSize();
 
+		// Iterate through data and populate line
+		for ( int32_t i = 0; i < mDataSize; i++ ) 
+		{
+			if ( mData[ i ] > maxVolume ) maxVolume = mData[ i ];
+		}
+		sendOSCMessage( "/volume/", "max", maxVolume*100 );
+		console() << "volume: " << maxVolume*100 << endl;
+
+	}
 }
 
 void ReymentaMobileApp::shutDown()
 {
+	// Stop input
+	mInput->stop();
+
+	// Free resources
+	if ( mData != 0 ) {
+		delete [] mData;
+	}
 	delete gui; 
 }
 

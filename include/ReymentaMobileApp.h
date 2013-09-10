@@ -31,6 +31,8 @@ using namespace std;
 #include "MidiConstants.h"
 #include "ciUI.h"
 
+#include "AudioInput.h"
+
 #define SLIDER_NOTE1 1
 #define SLIDER_NOTE2 2
 #define SLIDER_NOTE3 3
@@ -60,7 +62,10 @@ class ReymentaMobileApp : public AppBasic {
 	midi::Input mMidiIn;	
     ColorA backgroundColor; 
 	Vec2f position; 
-    ciUICanvas *gui;     
+    ciUICanvas *gui;   
+
+    ciUIMovingGraph *mvg; 
+
 	map<int,int> controlValues;
 	std::vector< ciUISlider * > sliders;
 	std::vector< ciUIRotarySlider * > rotarys;
@@ -69,6 +74,9 @@ class ReymentaMobileApp : public AppBasic {
 	std::vector< ciUILabelToggle * > togglesDown;
 	std::string					destinationHost;
 	int							destinationPort;
+	// Audio callback
+	void onData( float *data, int32_t size );
+
 private:
 	//bool						initialized;
 	int							nanoPort;
@@ -79,4 +87,9 @@ private:
     float						guiHeight; 
     float						dim; 
     float						length; 
+	// Audio input
+	float			*mData;
+	// float *buffer; 
+
+	AudioInputRef	mInput;
 };
