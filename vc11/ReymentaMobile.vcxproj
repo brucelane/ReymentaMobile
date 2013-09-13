@@ -92,7 +92,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>winmm.lib;cinder.lib;AudioInputWin.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"$(CINDER_085)\lib";"$(CINDER_085)\lib\msw"$(CINDER_085)\blocks\Cinder-AudioInputWin\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(CINDER_085)\lib;$(CINDER_085)\lib\msw;$(CINDER_085)\blocks\Cinder-AudioInputWin\lib</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>

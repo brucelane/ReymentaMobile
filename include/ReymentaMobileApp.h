@@ -63,7 +63,6 @@ class ReymentaMobileApp : public AppBasic {
     ColorA backgroundColor; 
 	Vec2f position; 
     ciUICanvas *gui;   
-
     ciUIMovingGraph *mvg; 
 
 	map<int,int> controlValues;

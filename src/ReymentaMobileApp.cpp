@@ -136,7 +136,8 @@ void ReymentaMobileApp::setup()
 	// cnx btn
 	gui->addWidgetRight( new ciUILabelButton(80, false, "connect", CI_UI_FONT_SMALL, 40.0f) );
 	// audio
-    gui->addWidgetSouthOf(new ciUIWaveform(240, 30, mData, 1024, -1.0, 1.0, "waveform"), "ip");  
+	gui->addWidgetSouthOf(new ciUILabel("audio", CI_UI_FONT_SMALL), "ip");        
+    gui->addWidgetSouthOf(new ciUIWaveform(240, 30, mData, 1024, -1.0, 1.0, "waveform"), "audio");  
     /*gui->addWidgetDown(new ciUISpectrum(240, 30, mData, 1024, -1.0, 1.0, "SPECTRUM"));  */
 	gui->addWidgetSouthOf(new ciUILabel("fps", CI_UI_FONT_SMALL), "waveform");        
 
@@ -331,7 +332,7 @@ void ReymentaMobileApp::update()
 		{
 			if ( mData[ i ] > maxVolume ) maxVolume = mData[ i ];
 		}
-		sendOSCMessage( "/volume/", "max", maxVolume*100 );
+		sendOSCMessage( "/volume/", "256", maxVolume*100 );
 		console() << "volume: " << maxVolume*100 << endl;
 
 	}
