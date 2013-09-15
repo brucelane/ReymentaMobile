@@ -10,7 +10,7 @@ void ReymentaMobileApp::prepareSettings(Settings* settings)
 void ReymentaMobileApp::setup()
 {
 	// OSC sender
-	destinationHost = "192.168.0.18";
+	destinationHost = "127.0.0.1";
 	destinationPort = 9999;
 	nanoPort = 0;
 	mOSCSender.setup(destinationHost, destinationPort);
